@@ -295,12 +295,20 @@ To TodoItem we add method changeTitle and we used TodoItemValidator to assure th
 
 Application service :
 ```java
+package io.rabitka.sample.todolist.application;
+
+import io.rabitka.core.ddd.ApplicationService;
+import io.rabitka.sample.todolist.domain.TodoItem;
+import io.rabitka.sample.todolist.domain.TodoItemRepository;
+
+import static io.rabitka.sample.todolist.domain.TodoItemPredicates.idIsEqualsTo;
+
 @ApplicationService
 public class ChangeTodoItemTitle {
 
     private TodoItemRepository todoItemRepository;
 
-    public EditTodoItem(
+    public ChangeTodoItemTitle(
             io.rabitka.sample.todolist.domain.TodoItemRepository todoItemRepository) {
         this.todoItemRepository = todoItemRepository;
     }
